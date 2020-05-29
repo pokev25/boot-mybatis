@@ -26,4 +26,10 @@ class DemoApplicationTests {
 		List<UserProfile> userProfiles = service.getUserProfileList();
 		log.info("user list : {}", userProfiles);
 	}
+
+	@Test
+	void getUserByID(){
+		UserProfile userProfile = service.getUserProfile(1);
+		log.info("user list : {}", userProfile);
+	}
 }

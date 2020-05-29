@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.UserProfileMapper">
+
+    <select id="getUserProfile" resultType="UserProfile">
+        SELECT ID
+              ,NAME
+              ,PHONE
+              ,ADDRESS
+          FROM UserProfile
+         WHERE ID = #{id}
+    </select>
+
+    <select id="getUserProfileList" resultType="UserProfile">
+        SELECT ID
+              ,NAME
+              ,PHONE
+              ,ADDRESS
+          FROM UserProfile
+    </select>
+
+    <insert id="insertUserProfile">
+      INSERT INTO UserProfile (ID, NAME , PHONE, ADDRESS)
+      Values(#{id}, #{name}, #{phone}, #{address} )
+    </insert>
+
+    <update id="updateUserProfile">
+      Update UserProfile set name=#{name}, phone=#{phone}, address=#{address} where id=#{id}
+    </update>
+
+    <delete id="deleteUserProfile">
+      delete from UserProfile where id=#{id}
+    </delete>
+
+</mapper>
