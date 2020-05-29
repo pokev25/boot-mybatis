@@ -9,17 +9,17 @@ import java.util.List;
 public interface UserProfileMapper {
 
     @Select("SELECT * FROM UserProfile where id=#{id}")
-    UserProfile getUserProfile(@Param("id") String id);
+    UserProfile getUserProfile(@Param("id") int id);
 
     @Select("SELECT * FROM UserProfile")
     List<UserProfile> getUserProfileList();
 
     @Insert("INSERT INTO UserProfile Values(#{id}, #{name}, #{phone}, #{address})")
-    int insertUserProfile(@Param("id") String id, @Param("name") String name, @Param("phone") String phone, @Param("address") String address);
+    int insertUserProfile(@Param("id") int id, @Param("name") String name, @Param("phone") String phone, @Param("address") String address);
 
     @Update("Update UserProfile set name=#{name}, phone=#{phone}, address=#{address} where id=#{id}")
-    int updateUserProfile(@Param("id") String id, @Param("name") String name, @Param("phone") String phone, @Param("address") String address);
+    int updateUserProfile(@Param("id") int id, @Param("name") String name, @Param("phone") String phone, @Param("address") String address);
 
     @Delete("delete from UserProfile where id=#{id}")
-    int deleteUserProfile(@Param("id") String id);
+    int deleteUserProfile(@Param("id") int id);
 }
