@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.repository.JdbcMemberRepository;
+import com.example.demo.repository.JdbcTemplateMemberRepository;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.MemoryMemberRepository;
 import org.springframework.context.annotation.Bean;
@@ -41,6 +42,7 @@ public class SpringConfig implements WebMvcConfigurer {
     @Bean
     public MemberRepository memberRepository() {
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        //return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
