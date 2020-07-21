@@ -55,4 +55,12 @@ class DemoApplicationTests {
 				.andDo(print())
 				.andExpect(status().isOk());
 	}
+
+	@Test
+	void getUserProfile() throws Exception {
+		mockMvc.perform(get("/user/{id}",1))
+				.andDo(print())
+				.andExpect(status().isOk());
+	}
+
 }

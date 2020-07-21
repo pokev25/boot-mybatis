@@ -20,6 +20,11 @@ public class UserProfileController {
         return service.getUserProfile(id);
     }
 
+//    @GetMapping("/user/{id}")
+//    public UserProfile getUserProfile(@PathVariable("id") UserProfile user){
+//        return user;
+//    }
+
     @GetMapping("/user/all")
     public List<UserProfile> getUserProfileList(){
         return service.getUserProfileList();
