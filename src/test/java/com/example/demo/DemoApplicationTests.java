@@ -42,7 +42,7 @@ class DemoApplicationTests {
 
 	@Test
 	void getUserByID(){
-		UserProfile userProfile = service.getUserProfile(1).get();
+		UserProfile userProfile = service.getUserProfile(1).orElseThrow();
 		log.info("user list : {}", userProfile);
 	}
 

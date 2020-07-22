@@ -17,7 +17,7 @@ public class UserProfileController {
 
     @GetMapping("/user/{id}")
     public UserProfile getUserProfile(@PathVariable("id") int id){
-        return service.getUserProfile(id).get();
+        return service.getUserProfile(id).orElse(null);
     }
 
 //    @GetMapping("/user/{id}")
