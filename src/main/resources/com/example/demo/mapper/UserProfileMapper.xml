@@ -5,7 +5,7 @@
 
 <mapper namespace="com.example.demo.mapper.UserProfileMapper">
 
-    <select id="getUserProfile" resultType="UserProfile">
+    <select id="findById" resultType="UserProfile" parameterType="Long">
         SELECT ID
               ,NAME
               ,PHONE
@@ -14,7 +14,7 @@
          WHERE ID = #{id}
     </select>
 
-    <select id="getUserProfileList" resultType="UserProfile">
+    <select id="findAll" resultType="UserProfile">
         SELECT ID
               ,NAME
               ,PHONE
