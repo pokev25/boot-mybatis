@@ -1,14 +1,12 @@
 package com.example.demo.service;
 
-import com.example.demo.repository.*;
+import com.example.demo.repository.MemberRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.persistence.EntityManager;
-import javax.sql.DataSource;
 import java.util.List;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -46,4 +44,5 @@ public class SpringConfig implements WebMvcConfigurer {
 //        //return new JdbcTemplateMemberRepository(dataSource);
 //        return new JpaMemberRepository(em);
 //    }
+
 }
